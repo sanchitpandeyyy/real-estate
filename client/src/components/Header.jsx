@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
           <Link to="/signout">
             <li className=" text-slate-700 hover:underline cursor-pointer">
-              SignOut
+              Signout
             </li>
           </Link>
         </ul>

@@ -18,31 +18,29 @@ const SignUp = () => {
     e.preventDefault();
     try {
       setLoading(true);
-    const res = await fetch("/api/auth/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await res.json();
-    if (data.success === false){
-      setError(data.message);
-      setLoading(false)
-      return;
-    }
-    setLoading(false)
-    console.log(data);
-    setError(null)
-    navigate('/signin')
+      const data = await res.json();
+      if (data.success === false) {
+        setError(data.message);
+        setLoading(false);
+        return;
+      }
+      setLoading(false);
+      console.log(data);
+      setError(null);
+      navigate("/signin");
     } catch (error) {
-      setLoading(false)
-      setError(error.message)
+      setLoading(false);
+      setError(error.message);
     }
-    
   };
-
 
   return (
     <div className="mx-10 ">
@@ -73,7 +71,10 @@ const SignUp = () => {
           id="password"
           onChange={handleChange}
         />
-        <button disabled={loading} class=" w-fit m-auto relative inline-flex items-center justify-start px-8 py-3 overflow-hidden font-medium transition-all bg-white rounded-md hover:bg-white group border-2">
+        <button
+          disabled={loading}
+          class=" w-fit m-auto relative inline-flex items-center justify-start px-8 py-3 overflow-hidden font-medium transition-all bg-white rounded-md hover:bg-white group border-2"
+        >
           <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-1000 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
           <span class="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white text-center">
             {loading ? "LOADING..." : "Sign Up"}
@@ -86,7 +87,7 @@ const SignUp = () => {
           Sign In
         </Link>
       </div>
-      {error && <p className="text-red-500 mt-5">{error}</p> }
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 };

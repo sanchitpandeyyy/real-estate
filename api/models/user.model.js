@@ -1,5 +1,8 @@
 import mongoose, { mongo } from "mongoose";
 
+
+//User Schema
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -17,8 +20,12 @@ const userSchema = new mongoose.Schema({
     },
 
 
-}, {timestamps: true});
+}, 
+// shows the time when created and edited in db
+{timestamps: true});
 
+
+// USer Model
 const User = mongoose.model('User',userSchema);
 
 export default User;

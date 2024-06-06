@@ -33,14 +33,10 @@ const Header = () => {
           </Link>
           <Link to="/signin">
             <li className=" text-slate-700 hover:underline cursor-pointer">
-              SignIn
+              Sign In
             </li>
           </Link>
-          <Link to="/signout">
-            <li className=" text-slate-700 hover:underline cursor-pointer">
-              Signout
-            </li>
-          </Link>
+          
         </ul>
       </div>
     </header>

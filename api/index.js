@@ -6,7 +6,6 @@ dotenv.config();
 const app = express();
 
 // importing api's
-import userRouter from "./routes/user.routes.js"
 import authRouter from "./routes/auth.routes.js"
 
 // connecting to mongodb
@@ -20,7 +19,6 @@ app.listen(3000, () => {
 });
 
 // Routing to apis
-app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter)
 
 

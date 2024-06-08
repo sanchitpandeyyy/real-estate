@@ -70,10 +70,10 @@ const Signin = () => {
           id="password"
           onChange={handleChange}
         />
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row h-20 gap-2 pb-3 ">
         <button
           disabled={loading}
-          className=" text-white px-3 sm:px-8 py-3 w-[10rem] sm:w-[15rem] m-auto rounded-md hover:bg-cyan-600 bg-sky-700 sm:py-4  text-xs sm:text-[15px]">
+          class=" text-white px-3 sm:px-8 py-3 w-[10rem] sm:w-[15rem] m-auto rounded-md hover:bg-cyan-600 bg-sky-700 sm:py-4  text-xs sm:text-[15px]">
             {loading ? "LOADING..." : "Sign In"}
         </button>
         <OAuth />

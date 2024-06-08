@@ -7,6 +7,7 @@ import {
   signinSuccess,
   signinFailure,
 } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 const Signin = () => {
   const [formData, setFormData] = useState({});
@@ -49,7 +50,7 @@ const Signin = () => {
 
   return (
     <div className="mx-10 ">
-      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
+      <h1 className="text-3xl text-center font-bold my-7 text-sky-800">Sign In</h1>
       <form
         onSubmit={handleSubmit}
         action=""
@@ -69,15 +70,14 @@ const Signin = () => {
           id="password"
           onChange={handleChange}
         />
+        <div className="flex">
         <button
           disabled={loading}
-          class=" w-fit m-auto relative inline-flex items-center justify-start px-8 py-3 overflow-hidden font-medium transition-all bg-white rounded-md hover:bg-white group border-2"
-        >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-1000 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-black transition-colors duration-300 ease-in-out group-hover:text-white text-center">
+          className=" text-white px-3 sm:px-8 py-3 w-[10rem] sm:w-[15rem] m-auto rounded-md hover:bg-cyan-600 bg-sky-700 sm:py-4  text-xs sm:text-[15px]">
             {loading ? "LOADING..." : "Sign In"}
-          </span>
         </button>
+        <OAuth />
+        </div>
       </form>
       <div className="mt-6 flex gap-5 m-auto max-w-xl">
         <p>Don't have an account?</p>
